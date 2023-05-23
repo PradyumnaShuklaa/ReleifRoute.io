@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      background-color: #5ab071;
+      margin: 0;
+      padding: 0;
+    }
+
+    .error {
+      color: red;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 100px;
+    }
+
+    .form-field {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Login Page with Background Image Example</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Your Logo">
+  </header>
+  <!-- partial:index.partial.html -->
+  <div id="bg"></div>
+  <form action="home.html" method="post" onsubmit="return validateCredentials()">
+    <div class="form-field">
+      <input type="email" name="email" id="email" placeholder="Email / Username" required />
+    </div>
+    <div class="form-field">
+      <input type="password" name="password" id="password" placeholder="Password" required />
+    </div>
+    <div class="form-field">
+      <button class="btn" type="submit">Log in</button>
+    </div>
+    <p id="errorMessage" class="error"></p>
+  </form>
+  <!-- partial -->
+  <script>
+    function validateCredentials() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+      if (email === 'un@refugee.com' && password === 'wS7cI2iH4eX3dO7qO6rM7aK7cS6vJ2x') {
+        return true; // Allow form submission
+      } else {
+        document.getElementById('errorMessage').textContent = 'Invalid credentials. Please try again.';
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+</body>
+
+</html>
